@@ -1,8 +1,7 @@
 //
 //  TATextView.swift
-//  TATextViewSample
 //
-//  Created by 朝井鴻輝 on 2016/04/05.
+//  Created by Koki Asai on 2016/04/05.
 //  Copyright © 2016年 teA.AsaiKoki. All rights reserved.
 //
 
