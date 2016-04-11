@@ -9,7 +9,7 @@
 import UIKit
 public class TATextView: UITextView {
     
-    //MARK: - 定数
+    //MARK: - constant
     private let kMinimumDefault:CGFloat     = 46.0
     private let kMarginDefault:CGFloat      = 8.0
     private let kMaximumDefault:CGFloat     = 128.0
@@ -182,19 +182,19 @@ extension TATextView:UITextViewDelegate{
         self.text   = self.textView.text
         
         let afterHeight = self.textView.contentSize.height + (kMarginDefault * 2.0)
-        //改行のするとtrue
+        //do newline
         if self.toolbar.frame.height != afterHeight{
             if (afterHeight < kMinimumDefault || afterHeight > kMaximumDefault) { return }
             
-            //差を計算
+            //calc diff
             let dif:CGFloat = afterHeight - self.toolbar.frame.height
-            //y座標変更
+            //edit origin.y
             self.toolbar.frame.origin.y -= dif
-            //高さを変更
+            //edit height
             self.textView.frame.size.height  = self.textView.contentSize.height
             self.toolbar.frame.size.height   = afterHeight
             
-            //ボタンの位置を調整
+            //adjust button point
             self.returnBtn.frame.origin = self.opposite(self.returnBtn, superview: self.toolbar, point: CGPoint(x: kMarginDefault, y: kMarginDefault))
 
         }
@@ -203,6 +203,7 @@ extension TATextView:UITextViewDelegate{
 }
 
 extension TATextView{
+    //change toolbar style
     public func toolbarShadowStyle(){
         self.toolbar.layer.borderWidth  = 0.0
         self.toolbar.layer.borderColor  = nil
